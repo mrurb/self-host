@@ -190,6 +190,8 @@ server {
 
   location /key-connector/ {
     proxy_pass {{{env.BW_KEY_CONNECTOR_INTERNAL_URL}}}/;
+    proxy_ssl_server_name on;
+    proxy_http_version 1.1;
   }
 {{/if}}
 }
